@@ -1,0 +1,98 @@
+@import "../variables.less";
+@import "/bootstrap/less/mixins/border-radius";
+
+.input-group-addon{
+	position: relative;
+	font-size:@font-size-md;
+
+	&.input-group-addon-line:before{
+		content:"";
+		position: absolute;
+		right: 0;
+		top: 3px;
+		width: 2px;
+		height:@input-height-base - 0.7;
+		background-color: @gray-lighter;
+	}
+	&.input-group-addon-arrow-down{
+		&:after{
+			content:"\e252";
+			position: absolute;
+			left: 20%;
+			bottom: -1.14rem;
+			font-size:2rem;
+			font-family: 'Glyphicons Halflings';
+		    color: #fff;
+		}
+	}
+	>.icon{
+		width:@font-size-base*1.20;
+		height:@font-size-base*1.250;
+		background-repeat: no-repeat;
+	}
+	>.input-group-addon-right{
+		padding:0.5rem;
+		font-size: @font-size-small;
+		color: #fff;
+		background-color: #b8b8b8;
+		border-radius:@border-radius-large;
+	}
+}
+
+.form-control{	 
+	font-size: @font-size-md;
+	color:@text-muted;
+	&:focus{
+		border-color:transparent;
+	}
+}
+
+//Input list group
+.input-list-group{
+
+	>.input-group{
+		position: relative;
+		//border-bottom: 1px solid #eee;
+		&:after{
+			content: "";
+			position: absolute;
+			bottom: 1px;
+			left: 2%;
+			width: 96%;
+			border-bottom: 1px solid @gray-lighter;
+			z-index: 10;
+		}
+		&:last-child{
+			&:after{
+				border-bottom: 0;
+			}
+		}
+		>.input-group-addon{
+		    //height: @input-height-base;			
+			//line-height: @line-height-base;
+			border-radius: 0;
+		}
+	}
+
+	>.input-group:first-child{
+		
+		>.input-group-addon:first-child{
+			border-top-left-radius:6px;
+		}
+		>.input-group-addon:last-child{
+			border-top-right-radius:6px;
+		}
+	}
+
+	>.input-group:last-child{
+		>.input-group-addon{
+			border-radius: 0;
+		}
+		>.input-group-addon:first-child{
+			border-bottom-left-radius:6px;
+		}
+		>.input-group-addon:last-child{
+			border-bottom-right-radius:6px;
+		}
+	}
+}
