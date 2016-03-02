@@ -120,11 +120,6 @@ gulp.task('images', function() {
         .pipe(gulp.dest(path.join('app', 'dist', 'images')));
 });
 
-gulp.task('images:event', function() {
-    return gulp.src(['app/event/**','!app/event/**/*.html','!app/event/**/*.js','!app/event/**/*.less'])
-        .pipe(gulp.dest(path.join('app', 'dist', 'event')));
-});
-
 /*====================================
  =   Compile, minify, mobilize less  =
  ====================================*/
@@ -204,27 +199,6 @@ gulp.task('js:templates:view', function () {
        .pipe(gulp.dest(path.join('app', 'dist', 'js')));
 });
 
-gulp.task('js:templates:view:event', function () {
-    return gulp.src(['app/event/**/*.html'])
-        .pipe(minifyHtml({
-            empty: true,
-            spare: true,
-            quotes: true
-        }))
-        .pipe(ngHtml2Js({
-            moduleName: "hsWechat.tpls",
-            prefix: "event/"
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(concat('view.event.tpls.js'))
-        .pipe(replace('__IMG_VERSION__','version='+GLOBS.appConfig.version))
-        .pipe(replace('__IMG_BASE__',GLOBS.appConfig.appRootUrl))
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(path.join('app', 'dist', 'js')))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.join('app', 'dist', 'js')));
-});
 
 gulp.task('js:templates:directive', function () {
    return gulp.src(['app/scripts/directives/*.tpl.html'])
@@ -340,19 +314,6 @@ gulp.task('clinker', function (done) {
         .pipe(gulp.dest('./css_example'));
 });
 
-gulp.task('yeepaylinker', function(done){
-    return gulp.src('app/_yeepay.html')
-        .pipe(linker({
-            scripts:['app/css/*.css'],
-            startTag: '<!--css-->',
-            endTag: '<!--css end-->',
-            fileTmpl: '<link crossorigin="anonymous" href="/%s" media="all" rel="stylesheet" />',
-            appRoot: 'app/'
-        }))
-        .pipe(rename('yeepay.html'))
-        .pipe(gulp.dest('app'));
-});
-
 gulp.task('buildlinker', function(done){
     return gulp.src('app/_index.html')
         .pipe(linker({
@@ -388,14 +349,6 @@ gulp.task('docs', function(done){
         .pipe(sftp(_.extend({remotePath:GLOBS.fakeapiRemoteRootPath+'/docs'}, GLOBS.fakeServerSshConfig)));
 });
 
-gulp.task('cssdocs', function(done){
-    gulp.src(['css_example/**'])
-        .pipe(sftp(_.extend({remotePath:GLOBS.fakeapiRemoteRootPath+'/css_example'}, GLOBS.fakeServerSshConfig)));
-    gulp.src(['app/less/**'])
-        .pipe(sftp(_.extend({remotePath:GLOBS.fakeapiRemoteRootPath+'/app/less'}, GLOBS.fakeServerSshConfig)));
-
-});
-
 /*====================================
  =            Default Task            =
  ====================================*/
@@ -416,31 +369,7 @@ gulp.task('csstest', function(done){
 });
 
 gulp.task('build', function(done){
-    seq('css:less', ['css:minify','js:minify', 'js:templates:view','js:templates:view:event', 'js:templates:directive', 'fonts','images','images:event','build:info'],'buildlinker',done);
-});
-
-gulp.task('deploy:fake:upload', function () {
-    return gulp.src(['app/dist/**'])
-        .pipe(sftp(_.extend({remotePath:GLOBS.fakeappRemoteRootPath}, GLOBS.fakeServerSshConfig)));
-});
-
-gulp.task('deploy:fake', function (done) {
-    seq('build', 'deploy:fake:upload', done);
-});
-
-gulp.task('deploy:real:upload', function () {
-    return gulp.src(['app/dist/**'])
-        .pipe(sftp({
-            host: GLOBS.appConfig.deployServer.host,
-            port: GLOBS.appConfig.deployServer.port,
-            user: GLOBS.appConfig.deployServer.user,
-            key : GLOBS.appConfig.deployServer.privatekey,
-            remotePath: GLOBS.appConfig.deployServer.path
-        }));
-});
-
-gulp.task('deploy:real', function (done) {
-    seq('build', 'deploy:real:upload', done);
+    seq('css:less', ['css:minify','js:minify', 'js:templates:view', 'js:templates:directive', 'fonts','images','build:info'],'buildlinker',done);
 });
 
 /*===============================
@@ -458,21 +387,6 @@ gulp.task('build:info', function (done) {
     };
     return string_src('info.json', JSON.stringify(info))
         .pipe(gulp.dest(path.join('app','dist')));
-});
-
-//编译angular-ui-boostrap
-gulp.task('angular-ui-bootstrap:copy', function (done) {console.log('ok');
-    gulp.src('other/angular-ui-boostrap/carousel/carousel.html').pipe(gulp.dest(path.join(__dirname,'bower_components/angular-ui-bootstrap/')));
-    return gulp.src('other/angular-ui-boostrap/Gruntfile.js').pipe(gulp.dest(path.join(__dirname,'bower_components/angular-ui-bootstrap/')));
-});
-
-gulp.task('angular-ui-bootstrap:build', function (done) {
-    require('gulp-grunt')(gulp,{base:path.join(__dirname,'bower_components/angular-ui-bootstrap/')});
-    seq('grunt-html2js','grunt-build');
-});
-
-gulp.task('angular-ui-bootstrap', function (done) {
-    seq('angular-ui-bootstrap:copy', 'angular-ui-bootstrap:build');
 });
 
 /*===============================
