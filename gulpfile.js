@@ -93,7 +93,7 @@ gulp.task('cnodemon', function () {
  ===================================================================*/
 
 gulp.task('watch', function () {
-    gulp.watch(['app/**', 'config/**'],['linker','yeepaylinker']);
+    gulp.watch(['app/**', 'config/**'],['linker']);
     gulp.watch(['app/less/**'],['css:less']);
 });
 
