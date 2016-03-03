@@ -1,8 +1,8 @@
-(function(angular, hsWechatServices){
+(function(angular, JFCoreServices){
 
     /**
      * @ngdoc service
-     * @name hsWechat.services.UA
+     * @name JFCore.services.UA
      * @description
      * User-Agent
      */
@@ -21,5 +21,5 @@
             return 'IOS' == _self.getOS().name.toUpperCase();
         }
     }
-    hsWechatServices.service('UA', UAService);
-})(angular, hsWechatServices);
+    JFCoreServices.service('UA', UAService);
+})(angular, JFCoreServices);

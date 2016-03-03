@@ -6,7 +6,7 @@ describe('NavbarDirective', function () {
     }
 
     //mock the app
-    beforeEach(module('hsWechat'));
+    beforeEach(module('JFCore'));
 
     //require ui.router
     beforeEach(module('ui.router'));

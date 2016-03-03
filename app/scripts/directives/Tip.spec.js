@@ -2,7 +2,7 @@ describe('ClearIdDirective', function () {
     var ele,tipMsg,scope, state, stateProvider, q, rootElement, compile, rootScope,timeout,httpBackend,controller,TipService;
 
     //mock the app
-    beforeEach(module('hsWechat'));
+    beforeEach(module('JFCore'));
 
     //set router
     beforeEach(module(function ($stateProvider) {
@@ -46,7 +46,7 @@ describe('ClearIdDirective', function () {
     });
 
     beforeEach(function(){
-        hsWechat.controller('SleepController', function sleepController($scope, $timeout) {
+        JFCore.controller('SleepController', function sleepController($scope, $timeout) {
             $scope.sleep = function(callback,timemillis){
                 $timeout(function(){
                     if(typeof callback == 'function') callback();

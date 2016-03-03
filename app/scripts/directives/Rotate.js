@@ -1,8 +1,8 @@
-(function (angular, hsWechatDirectives) {
+(function (angular, JFCoreDirectives) {
 
     /**
      * @ngdoc service
-     * @name hsWechat.directives.Rotate
+     * @name JFCore.directives.Rotate
      * @requires $rootScope
      * @requires $timeout
      * @description
@@ -16,8 +16,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Rotate.put
-         * @methodOf hsWechat.directives.Rotate
+         * @name JFCore.services.Rotate.put
+         * @methodOf JFCore.directives.Rotate
          * @param {String} name rotate name
          * @param {String} rotate Rotate
          * @description 添加旋转对象
@@ -31,8 +31,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Rotate.get
-         * @methodOf hsWechat.directives.Rotate
+         * @name JFCore.services.Rotate.get
+         * @methodOf JFCore.directives.Rotate
          * @param {String} name rotate name
          * @description 获取旋转对象
          */
@@ -43,8 +43,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Rotate.start
-         * @methodOf hsWechat.directives.Rotate
+         * @name JFCore.services.Rotate.start
+         * @methodOf JFCore.directives.Rotate
          * @param {String} name rotate name
          * @param {int} angle 旋转角度
          * @param {function} callback 旋转完成回调
@@ -64,8 +64,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Rotate.remove
-         * @methodOf hsWechat.directives.Rotate
+         * @name JFCore.services.Rotate.remove
+         * @methodOf JFCore.directives.Rotate
          * @param {String} name rotate name
          * @description 删除旋转对象
          */
@@ -75,11 +75,11 @@
         }
     }
 
-    hsWechatDirectives.service('Rotate', RotateService);
+    JFCoreDirectives.service('Rotate', RotateService);
 
     /**
      * @ngdoc directive
-     * @name hsWechat.directives.directive:rotate
+     * @name JFCore.directives.directive:rotate
      * @restrict A
      * @description
      *  旋转这个对象
@@ -113,7 +113,7 @@
         };
     }
 
-    hsWechatDirectives.directive('rotate', RotateDirective);
+    JFCoreDirectives.directive('rotate', RotateDirective);
 
     var supportedCSS, styles = document.getElementsByTagName("head")[0].style, toCheck = "transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
     for (var a = 0; a < toCheck.length; a++) if (styles[toCheck[a]] !== undefined) supportedCSS = toCheck[a];
@@ -375,4 +375,4 @@
         }
     }
 
-})(angular, hsWechatDirectives);
+})(angular, JFCoreDirectives);

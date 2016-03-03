@@ -1,8 +1,8 @@
-(function (angular, hsWechatServices) {
+(function (angular, JFCoreServices) {
 
     /**
      * @ngdoc service
-     * @name hsWechat.services.WechatJSSDK
+     * @name JFCore.services.WechatJSSDK
      *
      * @requires $q
      * @requires $http
@@ -44,8 +44,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#setAllShareParams
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#setAllShareParams
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 设置所有分享参数
@@ -95,8 +95,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#onMenuShareTimeline
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#onMenuShareTimeline
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“分享到朋友圈”，按钮点击、自定义分享内容及分享结果接口
@@ -136,8 +136,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#onMenuShareAppMessage
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#onMenuShareAppMessage
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
@@ -180,8 +180,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#onMenuShareQQ
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#onMenuShareQQ
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“分享到QQ”，按钮点击、自定义分享内容及分享结果接口
@@ -222,8 +222,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#onMenuShareWeibo
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#onMenuShareWeibo
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“分享到微博”，按钮点击、自定义分享内容及分享结果接口
@@ -263,8 +263,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#onMenuShareQZone
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#onMenuShareQZone
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“分享到QQ空间”，按钮点击、自定义分享内容及分享结果接口
@@ -305,8 +305,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#chooseImage
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#chooseImage
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“拍照或从手机相册中选图接口”，按钮点击
@@ -342,8 +342,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#previewImage
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#previewImage
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“预览照片”，按钮点击
@@ -371,8 +371,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#uploadImage
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#uploadImage
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“上传照片”，按钮点击
@@ -405,8 +405,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#downloadImage
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#downloadImage
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“下载照片”，按钮点击
@@ -439,8 +439,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#getLocation
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#getLocation
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“获取当前地理位置”，按钮点击
@@ -468,8 +468,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#openLocation
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#openLocation
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“查看地理位置”，按钮点击
@@ -504,8 +504,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#closeWindow
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#closeWindow
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“关闭当前窗口”，按钮点击
@@ -526,8 +526,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.service.WechatJSSDK#scanQRCode
-         * @methodOf hsWechat.service.WechatJSSDK
+         * @name JFCore.service.WechatJSSDK#scanQRCode
+         * @methodOf JFCore.service.WechatJSSDK
          *
          * @description
          * 2.1 监听“扫一扫”，按钮点击
@@ -560,5 +560,5 @@
     }
 
 
-    hsWechatServices.service('WechatJSSDK', WechatJSSDK);
-})(angular, hsWechatServices);
+    JFCoreServices.service('WechatJSSDK', WechatJSSDK);
+})(angular, JFCoreServices);

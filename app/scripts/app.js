@@ -2,18 +2,18 @@
 /*--app config--*/
 /*--activity config--*/
 /*--log config--*/
-var hsWechat = angular.module('hsWechat', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap', 'base64', 'angular-md5', 'LocalStorageModule',
+var JFCore = angular.module('JFCore', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap', 'base64', 'angular-md5', 'LocalStorageModule',
     'mobile-angular-ui', 'mobile-angular-ui.gestures', 'ngPostMessage', 'ct.ui.router.extras.sticky',
-    'ct.ui.router.extras.dsr', 'ct.ui.router.extras.statevis', 'hsWechat.controllers', 'hsWechat.services',
-    'hsWechat.directives', 'hsWechat.decorators', 'hsWechat.tpls']);
-var hsWechatControllers = angular.module('hsWechat.controllers', []);
-var hsWechatServices = angular.module('hsWechat.services', []);
-var hsWechatFilters = angular.module('hsWechat.filters', []);
-var hsWechatDirectives = angular.module('hsWechat.directives', ['ui.router']);
-var hsWechatDecorators = angular.module('hsWechat.decorators', ['ui.router', 'mobile-angular-ui']);
-var hsWechatTpls = angular.module('hsWechat.tpls', []);
+    'ct.ui.router.extras.dsr', 'ct.ui.router.extras.statevis', 'JFCore.controllers', 'JFCore.services','JFCore.filters',
+    'JFCore.directives', 'JFCore.decorators', 'JFCore.tpls']);
+var JFCoreControllers = angular.module('JFCore.controllers', []);
+var JFCoreServices = angular.module('JFCore.services', []);
+var JFCoreFilters = angular.module('JFCore.filters', []);
+var JFCoreDirectives = angular.module('JFCore.directives', ['ui.router']);
+var JFCoreDecorators = angular.module('JFCore.decorators', ['ui.router', 'mobile-angular-ui']);
+var JFCoreTpls = angular.module('JFCore.tpls', []);
 
-(function (angular, hsWechat) {
+(function (angular, JFCore) {
 
     /**
      * @type {string[]}
@@ -28,11 +28,11 @@ var hsWechatTpls = angular.module('hsWechat.tpls', []);
         $urlRouterProvider.otherwise("/home/");
     }
 
-    hsWechat.config(initConfig);
+    JFCore.config(initConfig);
 
-})(angular, hsWechat);
+})(angular, JFCore);
 
-(function (angular, hsWechat) {
+(function (angular, JFCore) {
 
     initConfig.$inject = ['$httpProvider'];
     function initConfig($httpProvider) {
@@ -98,7 +98,7 @@ var hsWechatTpls = angular.module('hsWechat.tpls', []);
         });
 
     }
-    hsWechat.config(initConfig);
+    JFCore.config(initConfig);
 
     /**
      * bind Service for rootScope
@@ -115,5 +115,5 @@ var hsWechatTpls = angular.module('hsWechat.tpls', []);
             return Service('Common');
         };
     }
-    hsWechat.run(HTMLService);
-})(angular, hsWechat);
+    JFCore.run(HTMLService);
+})(angular, JFCore);

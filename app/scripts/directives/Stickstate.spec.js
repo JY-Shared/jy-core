@@ -3,7 +3,7 @@ describe('StickstateDirective', function () {
     var sticky_1,sticky_2;
 
     //mock the app
-    beforeEach(module('hsWechat'));
+    beforeEach(module('JFCore'));
 
     //set router
     beforeEach(module(function ($stateProvider) {

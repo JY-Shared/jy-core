@@ -1,8 +1,9 @@
 {
-  "name": "hsbank-wechat",
+  "name": "JFCore",
   "version": "0.0.0",
   "authors": [
-    "QT<qiangqiang@xmdqq.com>"
+    "JasonYuan<fkeubukn@icloud.com>",
+    "Flora"
   ],
   "license": "MIT",
   "ignore": [

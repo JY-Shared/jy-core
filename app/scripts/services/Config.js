@@ -2,7 +2,7 @@
 
     /**
      * @ngdoc service
-     * @name hsWechat.services.Log
+     * @name JFCore.services.Log
      * @description
      *  ConfigProvide
      */
@@ -16,8 +16,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Config#pathIsApi
-         * @methodOf hsWechat.services.Config
+         * @name JFCore.services.Config#pathIsApi
+         * @methodOf JFCore.services.Config
          *
          * @description
          * 判断路径是否是API路径

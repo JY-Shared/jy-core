@@ -1,9 +1,9 @@
-﻿(function (angular, hsWechatFilters) {
+﻿(function (angular, JFCoreFilters) {
 
     /**
      * @ngdoc function
-     * @name hsWechat.service.WechatJSSDK#WechatShareFilter
-     * @methodOf hsWechat.service.WechatJSSDK
+     * @name JFCore.service.WechatJSSDK#WechatShareFilter
+     * @methodOf JFCore.service.WechatJSSDK
      *
      * @description
      * 当页面跳转成功，将分享参数写入wechat接口。
@@ -90,6 +90,6 @@
         });
     }
 
-    hsWechat.run(WechatShareFilter);
+    JFCore.run(WechatShareFilter);
 
-})(angular, hsWechatFilters);
+})(angular, JFCoreFilters);

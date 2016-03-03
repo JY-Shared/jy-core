@@ -1,8 +1,8 @@
-(function (angular, hsWechatDirectives) {
+(function (angular, JFCoreDirectives) {
 
     /**
      * @ngdoc service
-     * @name hsWechat.directives.Navbar
+     * @name JFCore.directives.Navbar
      * @requires $state
      * @requires $rootScope
      * @description
@@ -14,8 +14,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#getStateByPop
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#getStateByPop
+         * @methodOf JFCore.directives.Navbar
          * @param {Number} level
          * @description
          * get state info  by pop level
@@ -31,8 +31,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#pop
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#pop
+         * @methodOf JFCore.directives.Navbar
          * @param {Number} level
          * @description
          * 后退几步，默认1（可选）
@@ -60,8 +60,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#setPoping
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#setPoping
+         * @methodOf JFCore.directives.Navbar
          * @param {boolean} isPoping
          * @description
          * 设置isPoping
@@ -72,8 +72,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#checkPoping
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#checkPoping
+         * @methodOf JFCore.directives.Navbar
          * @returns {boolean}
          * @description
          * 是否能够POP检查是否为POP动作
@@ -84,8 +84,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#canPop
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#canPop
+         * @methodOf JFCore.directives.Navbar
          * @param level 后退几步，默认1（可选）
          * @returns {boolean} 是否能够POP
          * @description 是否能够后退
@@ -99,8 +99,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#isEmptyStack
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#isEmptyStack
+         * @methodOf JFCore.directives.Navbar
          * @returns {boolean}
          * @description 判断stack是否为空
          */
@@ -111,8 +111,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#init
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#init
+         * @methodOf JFCore.directives.Navbar
          * @param {Object} current
          * @description 初始化Navbar
          */
@@ -125,8 +125,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#push
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#push
+         * @methodOf JFCore.directives.Navbar
          * @param {Object} current
          * @param {number} i
          * @description
@@ -139,8 +139,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.directives.Navbar#setTitle
-         * @methodOf hsWechat.directives.Navbar
+         * @name JFCore.directives.Navbar#setTitle
+         * @methodOf JFCore.directives.Navbar
          * @param {String} title navbar标题
          * @description 修改navbar标题
          */
@@ -149,14 +149,14 @@
         };
     }
 
-    hsWechatDirectives.service('Navbar', Navbar);
+    JFCoreDirectives.service('Navbar', Navbar);
 
 
 
 
     /**
      * @ngdoc directive
-     * @name hsWechat.directives.directive:navbar
+     * @name JFCore.directives.directive:navbar
      *
      * @requires ui.router.state.$state
      * @requires ui.router.state.$stateParams
@@ -298,6 +298,6 @@
         };
     }
 
-    hsWechatDirectives.directive('navbar', NavbarDirective);
+    JFCoreDirectives.directive('navbar', NavbarDirective);
 
-})(angular, hsWechatDirectives);
+})(angular, JFCoreDirectives);

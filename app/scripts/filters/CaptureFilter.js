@@ -1,4 +1,4 @@
-﻿(function (angular, hsWechatFilters) {
+﻿(function (angular, JFCoreFilters) {
     /**
      * change state 清除modals的内容
      */
@@ -8,6 +8,6 @@
             Capture.setContentFor('modals', '', $rootScope);
         });
     }
-    hsWechat.run(CaptureFilter);
+    JFCore.run(CaptureFilter);
 
-})(angular, hsWechatFilters);
+})(angular, JFCoreFilters);

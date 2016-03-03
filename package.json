@@ -1,13 +1,16 @@
 ﻿{
-  "name": "wechat",
-  "version": "0.0.1",
-  "description": "for mobile prototype and wechat mobile html5",
+  "name": "JFCore",
+  "version": "0.0.0",
+  "description": "for mobile prototype and mobile html5",
   "main": "app/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
-  "author": "YCC",
+  "author": [
+    "JasonYuan<fkeubukn@icloud.com>",
+    "Flora"
+  ],
   "license": "ISC",
   "devDependencies": {
     "express":"",

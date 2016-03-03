@@ -1,8 +1,8 @@
-(function(angular, hsWechatServices){
+(function(angular, JFCoreServices){
 
     /**
      * @ngdoc service
-     * @name hsWechat.services.Yeepay
+     * @name JFCore.services.Yeepay
      *
      * @requires $http
      * @requires $q
@@ -16,8 +16,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Common#getAppConfig
-         * @methodOf hsWechat.services.Common
+         * @name JFCore.services.Common#getAppConfig
+         * @methodOf JFCore.services.Common
          * @description
          *  获取APP.JSON配置
          */
@@ -26,5 +26,5 @@
             return $window.SERVERCONF;
         }
     }
-    hsWechatServices.service('Common', Common);
-})(angular, hsWechatServices);
+    JFCoreServices.service('Common', Common);
+})(angular, JFCoreServices);

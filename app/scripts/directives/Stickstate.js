@@ -1,4 +1,4 @@
-(function (angular, hsWechatDirectives) {
+(function (angular, JFCoreDirectives) {
     StickyStateDirective.$inject = ['$state', 'uirextras_core'];
     function StickyStateDirective($state, uirextras_core) {
         var objectKeys = uirextras_core.objectKeys;
@@ -42,6 +42,6 @@
         }
     };
 
-    hsWechatDirectives.directive('stickyState', StickyStateDirective);
+    JFCoreDirectives.directive('stickyState', StickyStateDirective);
 
-})(angular, hsWechatDirectives);
+})(angular, JFCoreDirectives);

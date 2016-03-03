@@ -1,8 +1,8 @@
-(function (angular, hsWechatDirectives) {
+(function (angular, JFCoreDirectives) {
 
     /**
      * @ngdoc service
-     * @name hsWechat.directives.Tip
+     * @name JFCore.directives.Tip
      * @requires $rootScope
      * @requires $timeout
      * @description
@@ -12,8 +12,8 @@
     function Tip($rootScope) {
         /**
          * @ngdoc function
-         * @name hsWechat.services.Tip.show
-         * @methodOf hsWechat.directives.Tip
+         * @name JFCore.services.Tip.show
+         * @methodOf JFCore.directives.Tip
          * @param {String} msg 信息
          * @param {int} timeout 提示时间（可选）默认1.5秒
          * @param {String} selector 
@@ -32,8 +32,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Tip.showError
-         * @methodOf hsWechat.directives.Tip
+         * @name JFCore.services.Tip.showError
+         * @methodOf JFCore.directives.Tip
          * @param {String} msg 错误信息
          * @param {int} timeout 提示时间
          * @description 显示错误信息
@@ -42,8 +42,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Tip.showPopover
-         * @methodOf hsWechat.directives.Tip
+         * @name JFCore.services.Tip.showPopover
+         * @methodOf JFCore.directives.Tip
          * @param {String} msg 提示信息
          * @param {String} selector
          * @param {String} [direction] 显示方向 //left、right、top、bottom
@@ -57,8 +57,8 @@
 
         /**
          * @ngdoc function
-         * @name hsWechat.services.Tip.hidePopover
-         * @methodOf hsWechat.directives.Tip
+         * @name JFCore.services.Tip.hidePopover
+         * @methodOf JFCore.directives.Tip
          * @description 隐藏 popover
          */
         this.hidePopover = hidePopover;
@@ -67,14 +67,14 @@
         }
         
     }
-    hsWechatDirectives.service('Tip', Tip);
+    JFCoreDirectives.service('Tip', Tip);
 
 
 
 
     /**
      * @ngdoc directive
-     * @name hsWechat.directives.directive:tip
+     * @name JFCore.directives.directive:tip
      *
      * @restrict A
      *
@@ -123,11 +123,11 @@
         };
     }
 
-    hsWechatDirectives.directive('tip', TipDirective);
+    JFCoreDirectives.directive('tip', TipDirective);
 
     /**
      * @ngdoc directive
-     * @name hsWechat.directives.directive:tipPopoverStatic
+     * @name JFCore.directives.directive:tipPopoverStatic
      * @restrict A
      * @description
      * PopoverDirective
@@ -224,12 +224,12 @@
             }]
         };
     }
-    hsWechatDirectives.directive('tipPopoverStatic', TipPopoverStaticDirective);
+    JFCoreDirectives.directive('tipPopoverStatic', TipPopoverStaticDirective);
 
 
     /**
      * @ngdoc directive
-     * @name hsWechat.directives.directive:tipPopover
+     * @name JFCore.directives.directive:tipPopover
      * @restrict A
      * @description
      * TipPopoverBindDirectives
@@ -252,7 +252,7 @@
             }
         };
     }
-    hsWechatDirectives.directive('tipPopover', TipPopoverDirectives);
+    JFCoreDirectives.directive('tipPopover', TipPopoverDirectives);
 
     function getPosition(o)
     {
@@ -269,4 +269,4 @@
         temp.bottom=temp.top+temp.oHeight;
         return temp;
     }
-})(angular, hsWechatDirectives);
+})(angular, JFCoreDirectives);

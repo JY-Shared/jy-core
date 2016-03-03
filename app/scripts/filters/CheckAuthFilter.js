@@ -1,4 +1,4 @@
-﻿(function (angular, hsWechatFilters) {
+﻿(function (angular, JFCoreFilters) {
     /**
      * 检查登录权限
      */
@@ -32,6 +32,6 @@
         //        }
         //});
     }
-    hsWechat.run(CheckAuthFilter);
+    JFCore.run(CheckAuthFilter);
 
-})(angular, hsWechatFilters);
+})(angular, JFCoreFilters);
