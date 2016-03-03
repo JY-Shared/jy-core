@@ -185,7 +185,7 @@ gulp.task('js:templates:view', function () {
            quotes: true
        }))
        .pipe(ngHtml2Js({
-           moduleName: "hsWechat.tpls",
+           moduleName: "JFCore.tpls",
            prefix: "scripts/views/"
        }))
        .pipe(sourcemaps.init())
@@ -208,7 +208,7 @@ gulp.task('js:templates:directive', function () {
            quotes: true
        }))
        .pipe(ngHtml2Js({
-           moduleName: "hsWechat.tpls",
+           moduleName: "JFCore.tpls",
            prefix: "scripts/directives/"
        }))
        .pipe(sourcemaps.init())

@@ -67,3 +67,31 @@ Project encoding: UTF-8
 + http://daringfireball.net/projects/markdown/syntax
 
 + http://www.appinn.com/markdown/
+
+
+
+# 参数解释
+  
+  + state参数解释
+  ```
+    $stateProvider.state('parent.stateName', {
+                url: '访问路径=parentURL+thisUrl',
+                abstract: true,
+                templateUrl: "模板",
+                controller:'控制器',
+                sticky: false, //页面静态化
+                data:{   //自定义data参数
+                    $navbarDirection:'go/push',
+                    $navbarTitle:'标题', 
+                    $navbarShow:true,
+                    $navbarPopDefault:'pop返回stateName',
+                    $needAuth:'{boolean}页面是否需要登录',
+                    $wechat{
+                        shareTitle: '分享标题',
+                        shareDesc : '分享描述'
+                        shareImgUrl : '分享图片',
+                        shareLink : '分享地址'
+                    }
+                }
+            })
+    ```

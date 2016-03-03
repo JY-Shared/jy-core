@@ -10,8 +10,8 @@
      * @description
      * 易宝相关服务
      */
-    Common.$inject = ['$http', '$q','$state','$base64','$window', 'Config','localStorageService','Account','UA'];
-    function Common($http, $q,$state,$base64,$window,Config,localStorageService,Account,UA) {
+    Common.$inject = ['$window'];
+    function Common($window) {
 
 
         /**

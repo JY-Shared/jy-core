@@ -1,4 +1,4 @@
-(function(angular, hsLib){
+(function(angular, JFCore){
 
     /**
      * @ngdoc service
@@ -11,6 +11,9 @@
         this.apiPath = {
             account:{
                 info:''
+            },
+            wechat:{
+                jsSignature : ''
             }
         };
 
@@ -52,5 +55,5 @@
             }
         }
     }
-    hsLib.provider('Config', ConfigProvider);
-})(angular, hsLib);
+    JFCore.provider('Config', ConfigProvider);
+})(angular, JFCore);

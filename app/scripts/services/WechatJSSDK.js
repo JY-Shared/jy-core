@@ -560,5 +560,5 @@
     }
 
 
-    JFCoreServices.service('WechatJSSDK', WechatJSSDK);
+    //JFCoreServices.service('WechatJSSDK', WechatJSSDK);
 })(angular, JFCoreServices);

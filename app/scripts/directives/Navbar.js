@@ -205,9 +205,11 @@
     NavbarDirective.$inject = ['Navbar'];
     function NavbarDirective(Navbar) {
         return {
-            restrict: 'A',
+            restrict: 'AE',
             replace:true,
-            scope:{},
+            scope:{
+                navs : '=navs',
+            },
             //template:'<nav ng-show="show"><button ng-hide="hideGobackButton">返回</button><span>{{title}}</span></nav>',
 
             templateUrl:'scripts/directives/Navbar.tpl.html',

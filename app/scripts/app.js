@@ -117,3 +117,17 @@ var JFCoreTpls = angular.module('JFCore.tpls', []);
     }
     JFCore.run(HTMLService);
 })(angular, JFCore);
+
+(function (angular, JFCoreControllers) {
+    MainController.$inject = ['$scope'];
+    function MainController($scope) {
+        $scope.navs = [
+            {text: "推荐", href: "home.main", icon: "icon-double-square"},
+            {text: "投资", href: "invest.list", icon: "icon-copper-coin"},
+            {text: "我的", href: "account.main", icon: "icon-purse"},
+            {text: "更多", href: "more.main", icon: "icon-three-circle"}
+        ];
+    }
+
+    JFCoreControllers.controller("MainController", MainController);
+})(angular, JFCoreControllers);

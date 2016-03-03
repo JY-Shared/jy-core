@@ -21,8 +21,8 @@
      *        })
      * </pre>
      */
-    WechatShareFilter.$inject = ['$rootScope', '$window', 'WechatJSSDK', 'Common', 'Account'];
-    function WechatShareFilter($rootScope, $window, WechatJSSDK, Common, Account) {
+    WechatShareFilter.$inject = ['$rootScope', '$window', 'WechatJSSDK', 'Common'];
+    function WechatShareFilter($rootScope, $window, WechatJSSDK, Common) {
 
         /**
          * 设置State分享参数
@@ -90,6 +90,6 @@
         });
     }
 
-    JFCore.run(WechatShareFilter);
+    //JFCore.run(WechatShareFilter);
 
 })(angular, JFCoreFilters);
