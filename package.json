@@ -60,6 +60,7 @@
     "gulp-linker": "",
     "gulp-sftp":"",
     "gulp-live-server":"https://github.com/heran/gulp-live-server.git",
+    "gulp-fakedocs":"https://github.com/heran/gulp-fakedocs.git",
     "gulp-markdown":"",
     "gulp-replace":"",
     "gulp-ng-html2js":"",
@@ -85,6 +86,5 @@
     "path-extra":"",
 
     "jssha":""
-
   }
 }

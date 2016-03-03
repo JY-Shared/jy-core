@@ -164,8 +164,8 @@ gulp.task('js:minify',  function() {
         'bower_components/angular-base64/angular-base64.min.js',
         'bower_components/angular-md5/angular-md5.min.js',
         'app/lib/**/*.js',
-        'app/scripts/app.js','app/scripts/*.js','app/scripts/*/*.js','app/scripts/*/*/*.js','app/event/**/*.js',
-        '!app/event/**/*.spec.js','!app/scripts/*/*.spec.js','!app/scripts/*/*/*.spec.js'])
+        'app/scripts/**/*.js',
+        '!app/scripts/**/*.spec.js'])
         .pipe(replace('/*--app config--*/', 'window.SERVERCONF='+serverConfig+';'))
         .pipe(replace(/\,[\s]*[\"]?deployServer[\"]?:\{[^\}]*\}/, ''))
         .pipe(sourcemaps.init())
@@ -347,6 +347,17 @@ gulp.task('docs', function(done){
         .pipe(gulpDocs.process(options))
         .pipe(gulp.dest('./docs'))
         .pipe(sftp(_.extend({remotePath:GLOBS.fakeapiRemoteRootPath+'/docs'}, GLOBS.fakeServerSshConfig)));
+});
+
+gulp.task('fakedocs', function(done){
+    var fakeDocs = require('gulp-fakedocs');
+    var options = {
+        html5Mode: false
+    };
+
+    return gulp.src(['routes/*.js'])
+        .pipe(fakeDocs.process(options))
+        .pipe(gulp.dest('./fakedocs'));
 });
 
 /*====================================
