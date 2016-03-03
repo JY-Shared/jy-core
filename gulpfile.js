@@ -403,34 +403,34 @@ gulp.task('build:info', function (done) {
 /*===============================
  =            Test              =
  ===============================*/
-gulp.task('test:unit', function (done) {
-    var Server = require('karma').Server;
-    new Server({
-        configFile:__dirname+ '/test/karma.jenkins.conf.js',
-        singleRun: true
-    }, done).start();
-});
-
-gulp.task('test:protractor', function (done) {
-    return gulp.src(["test/e2e/*.js"])
-        .pipe(protractor({
-            configFile: "test/protractor.jenkins.conf.js"
-        }))
-        .on('error', function(e) {
-            console.log(e.message);
-            throw e;
-        });
-});
-
-gulp.task('test:e2e:stopServer', function(done){
-    GLOBS.lieveServer.stop().then(function () {
-        done();
-    });
-});
-
-gulp.task('test:e2e', function (done) {
-    seq('css:less', 'linker', 'nodemon', 'test:protractor', 'test:e2e:stopServer', 'exit');
-});
+//gulp.task('test:unit', function (done) {
+//    var Server = require('karma').Server;
+//    new Server({
+//        configFile:__dirname+ '/test/karma.jenkins.conf.js',
+//        singleRun: true
+//    }, done).start();
+//});
+//
+//gulp.task('test:protractor', function (done) {
+//    return gulp.src(["test/e2e/*.js"])
+//        .pipe(protractor({
+//            configFile: "test/protractor.jenkins.conf.js"
+//        }))
+//        .on('error', function(e) {
+//            console.log(e.message);
+//            throw e;
+//        });
+//});
+//
+//gulp.task('test:e2e:stopServer', function(done){
+//    GLOBS.lieveServer.stop().then(function () {
+//        done();
+//    });
+//});
+//
+//gulp.task('test:e2e', function (done) {
+//    seq('css:less', 'linker', 'nodemon', 'test:protractor', 'test:e2e:stopServer', 'exit');
+//});
 
 /*===============================
  =            Release           =
