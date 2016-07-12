@@ -17,29 +17,8 @@
     "grunt":"",
     "express-redirect":"",
     "gulp-nodemon":"",
-//    "karma":"",
-//    "karma-jasmine":"",
-//    "karma-jasmine-jquery":"",
-//    "karma-script-launcher": "",
-//    "karma-chrome-launcher": "",
-//    "karma-firefox-launcher": "",
-//    "karma-html2js-preprocessor": "",
-//    "karma-requirejs": "",
-//    "karma-coffee-preprocessor": "",
-//    "karma-phantomjs-launcher": "",
-//    "karma-ng-html2js-preprocessor": "",
-//    "karma-ng-scenario": "",
-//    "karma-jenkins-reporter":"",
-//    "karma-junit-reporter":"",
-
-//    "protractor":"",
-
-//    "jasmine-reporters":"",
-
     "gulp-ngdocs":"",
-
     "moment":"",
-
     "debug": "",
     "bower": "",
     "cheerio": "",
@@ -57,7 +36,6 @@
     "gulp-release-tasks": "",
     "gulp-rename": "",
     "gulp-sourcemaps": "",
-    "gulp-cssample": "",
     "gulp-uglify": "",
     "gulp-util": "",
     "gulp-linker": "",
@@ -68,26 +46,22 @@
     "gulp-replace":"",
     "gulp-ng-html2js":"",
     "gulp-minify-html":"",
-    "gulp-karma":"",
     "connect-livereload":"",
     "phantomjs": "",
     "run-sequence": "",
     "selenium-standalone-jar": "",
     "serve-favicon": "",
     "slug": "",
-
     "restler":"",
     "restler-when":"",
     "urlencode":"",
-
     "deasync":"",
-
     "body-parser":"",
     "multer":"",
     "lodash":"",
-
     "path-extra":"",
-
-    "jssha":""
+    "jssha":"",
+    "gulp-postcss":"",
+    "autoprefixer": "https://github.com/postcss/autoprefixer.git"
   }
 }
