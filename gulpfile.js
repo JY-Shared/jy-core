@@ -41,12 +41,12 @@ var GLOBS = {};
 GLOBS.fonts                 = ['bower_components/font-awesome/fonts/fontawesome-webfont.*', 'bower_components/bootstrap/fonts/**'];
 GLOBS.vendorLess            = [ path.resolve(__dirname, 'app/less'), path.resolve(__dirname, 'bower_components'), path.resolve(__dirname) ];
 GLOBS.lieveServer = null;
-GLOBS.fakeServerSshConfig = {
-    host: 'fakeapi.fdjf.net',
-    port: 22,
-    user: 'wechat',
-    key : path.homedir()+'/.ssh/wechat.key'
-};
+// GLOBS.fakeServerSshConfig = {
+//     host: 'fakeapi.fdjf.net',
+//     port: 22,
+//     user: 'wechat',
+//     key : path.homedir()+'/.ssh/wechat.key'
+// };
 GLOBS.appConfig = JSON.parse(fs.readFileSync('config/app.json'));
 GLOBS.fakeapiRemoteRootPath = '/home/wechat/www/fakeapi';
 GLOBS.fakeappRemoteRootPath = '/home/wechat/www/fakeapp';
@@ -80,13 +80,13 @@ gulp.task('nodemon', function () {
     });
 });
 
-gulp.task('cnodemon', function () {
-    GLOBS.lieveServer = gls('bin/www', {env: {NODE_ENV: 'development'}});
-    GLOBS.lieveServer.start();
-    gulp.watch(['css_example/**'], function (file) {
-        GLOBS.lieveServer.notify.apply(GLOBS.lieveServer, [file]);
-    });
-});
+// gulp.task('cnodemon', function () {
+//     GLOBS.lieveServer = gls('bin/www', {env: {NODE_ENV: 'development'}});
+//     GLOBS.lieveServer.start();
+//     gulp.watch(['css_example/**'], function (file) {
+//         GLOBS.lieveServer.notify.apply(GLOBS.lieveServer, [file]);
+//     });
+// });
 
 /*===================================================================
  =            Watch for source changes and rebuild/reload            =
@@ -349,16 +349,16 @@ gulp.task('docs', function(done){
         .pipe(sftp(_.extend({remotePath:GLOBS.fakeapiRemoteRootPath+'/docs'}, GLOBS.fakeServerSshConfig)));
 });
 
-gulp.task('fakedocs', function(done){
-    var fakeDocs = require('gulp-fakedocs');
-    var options = {
-        html5Mode: false
-    };
+// gulp.task('fakedocs', function(done){
+//     var fakeDocs = require('gulp-fakedocs');
+//     var options = {
+//         html5Mode: false
+//     };
 
-    return gulp.src(['routes/*.js'])
-        .pipe(fakeDocs.process(options))
-        .pipe(gulp.dest('./fakedocs'));
-});
+//     return gulp.src(['routes/*.js'])
+//         .pipe(fakeDocs.process(options))
+//         .pipe(gulp.dest('./fakedocs'));
+// });
 
 /*====================================
  =            Default Task            =
