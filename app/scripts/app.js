@@ -122,10 +122,7 @@ var JFCoreTpls = angular.module('JFCore.tpls', []);
     MainController.$inject = ['$scope'];
     function MainController($scope) {
         $scope.navs = [
-            {text: "1", href: "home.main", icon: "icon-double-square"},
-            {text: "2", href: "invest.list", icon: "icon-copper-coin"},
-            {text: "3", href: "account.main", icon: "icon-purse"},
-            {text: "4", href: "more.main", icon: "icon-three-circle"}
+            {text: "Home", href: "home.main", icon: "icon-purse"}
         ];
     }
 

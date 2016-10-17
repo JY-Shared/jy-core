@@ -3,20 +3,19 @@
     initConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function initConfig ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('account', {
-                url: '/account',
+            .state('home', {
+                url: '/home',
                 abstract: true,
                 views:{
-                    'account':{
-                        templateUrl: "scripts/views/account/layout.html"
+                    'home':{
+                        templateUrl: "scripts/views/home/layout.html"
                     }
                 }
             })
-            .state('account.main', {
+            .state('home.main', {
                 url: '/',
-                templateUrl: "scripts/views/account/main.html",
-                //controller:'AccountMainCtrl',
-                data:{$navbarDirection:'go', $navbarTitle:'更多', $navbarShow:true}
+                templateUrl: "scripts/views/home/main.html",
+                data:{$navbarDirection:'push', $navbarTitle:'<<', $navbarShow:true}
             })
         ;
     }

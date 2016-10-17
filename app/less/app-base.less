@@ -1,16 +1,33 @@
-﻿// ==========================================
-//   Framework
-// ==========================================
-@import "framework";
-// ==========================================
-//   Custom Variables
-// ==========================================
-@import "variables";
-// ==================================
-//  Config
-// ==================================
-@import "/config/config";
-// ==================================
-// Custom
-// ==================================
-@import "app-jiaxiaojie";
+﻿.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.screencolor{
+  @media screen {
+    color: green;
+    @media (max-width:320px) {
+      color: red;
+    }
+  }
+}
+
+@base:#000;
+@filler:@base*2;
+@other:@base+@filler;
+@width:0.5;
+
+.class{
+  width: percentage(@width);
+  color: saturate(@base,5%);
+  background-color: spin(lighten(@base,25%),8);
+}
+
+nav ul&:extend(.inline all){
+  background-color: red;
+}
+.inline{
+  color: yellow;
+  span{
+    font-size: 30px;
+  }
+}
